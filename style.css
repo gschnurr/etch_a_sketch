@@ -1,0 +1,37 @@
+/**
+I need to relativley position gamebox to the window and absolutley position the gridbox and button box
+to the gamebox area
+**/
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px:
+}
+
+.cells {
+  display: inline-block;
+  border: .1px solid black;
+}
+
+#gridBox {
+  width: 100%;
+  height: 50%;
+  font-size: 0px;
+  border: 1px solid red;
+}
+
+#gameBox {
+  width: 400px;
+  height: 800px;
+  border: 1px solid blue;
+}
+
+#buttonArea {
+  display: inline-block;
+  width: 100%;
+  height: 50%;
+  border: 1px solid green;
+}
