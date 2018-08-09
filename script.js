@@ -10,6 +10,7 @@ let gridWidth = document.getElementById('gridBox').clientWidth;
 let gridArea = (gridWidth ** 2);
 let cellArea = (gridArea / numberCells);
 let cellSize = Math.sqrt(cellArea);
+let cells;
 let grid = [];
 
 
@@ -24,10 +25,20 @@ function createGrid() {
     cells.addEventListener("mouseover", colorCells);
   }
 }
-
+createGrid();
 // the this statement is important because without it we are saying that the last
 // div created will own the function on any mouseover, however the this makes the
 // object that is being moused over own the function.
+
+function removeGrid() {
+  cells = document.getElementsByClassName('cells');
+  for ()
+  //I will need to create a function that will remove the last div with a loop then
+  //rebuild it with the new variable.
+  //the removal function should be done with a for loop
+  //for(i=0; i > cells.length; i--) or something like this
+  //cells = getElementsByClassName(cells)
+}
 
 function colorCells() {
   this.style.backgroundColor = 'black';
@@ -37,10 +48,13 @@ function selectGridSize() {
   largeButton.addEventListener('click', () => gridSize('large'));
 }
 
+
 function gridSize(userSelection) {
   switch (userSelection) {
     case 'large':
-      numberCells = 6400;
+      numberCells = 400;
+      removeGrid();
+      createGrid();
       break;
     default:
       alert('something is broke');
@@ -49,4 +63,3 @@ function gridSize(userSelection) {
 }
 
 selectGridSize();
-createGrid();
