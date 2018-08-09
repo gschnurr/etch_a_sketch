@@ -5,12 +5,11 @@
 //add button clicks for Large grid 6400, medium 1600, small 400
 
 
-let numberCells = 400;
+let numberCells = 6400;
 let gridWidth = document.getElementById('gridBox').clientWidth;
 let gridArea = (gridWidth ** 2);
 let cellArea = (gridArea / numberCells);
 let cellSize = Math.sqrt(cellArea);
-let cells;
 let grid = [];
 
 
@@ -21,11 +20,33 @@ function createGrid() {
     cells.className = 'cells';
     cells.style.width = cellSize + 'px';
     cells.style.height = cellSize + 'px';
-
     gridBox.appendChild(cells);
+    cells.addEventListener("mouseover", colorCells);
   }
-  //newCells.addEventListener("mouseover", greyScaleCells());
-
 }
 
+// the this statement is important because without it we are saying that the last
+// div created will own the function on any mouseover, however the this makes the
+// object that is being moused over own the function.
+
+function colorCells() {
+  this.style.backgroundColor = 'black';
+}
+
+function selectGridSize() {
+  largeButton.addEventListener('click', () => gridSize('large'));
+}
+
+function gridSize(userSelection) {
+  switch (userSelection) {
+    case 'large':
+      numberCells = 6400;
+      break;
+    default:
+      alert('something is broke');
+      break;
+  }
+}
+
+selectGridSize();
 createGrid();
