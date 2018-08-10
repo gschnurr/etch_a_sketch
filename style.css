@@ -11,33 +11,65 @@ to the gamebox area
   margin: 0px:
 }
 
-.cells {
-  display: inline-block;
-  border: .1px solid black;
-}
-
-#gridBox {
-  width: 100%;
-  height: 50%;
-  font-size: 0px;
-  border: 1px solid red;
+body {
+  background-color: Lightgreen;
 }
 
 #gameBox {
-  width: 400px;
-  height: 800px;
-  border: 1px solid blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 750px;
+  max-width: 900px;
+  min-height: 600px;
+  max-height: 700px;
+  border: 4px solid navy;
+  border-radius: 10px;
+  background-color: Lightblue;
 }
 
-#buttonArea {
+.cellsClass {
   display: inline-block;
-  width: 100%;
-  height: 50%;
-  border: 1px solid green;
+  opacity: 0;
+  background-color: black;
+}
+
+#gridBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  font-size: 0px;
+  border: 2px solid navy;
+  border-radius: 10px;
+  background-color: white;
+}
+
+
+
+#buttonArea {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10%;
 }
 
 .sizeButtons {
-  background-color: pink;
-  border: 1px solid black;
-  border-radius: 4px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0% 5%;
+  padding: 20px;
+  display: inline-block;
+  background-color: white;
+  border: 2px solid navy;
+  border-radius: 100%;
+  font-weight: bold;
+  color: navy;
 }
